@@ -4,11 +4,18 @@
   "description": "Reto 9 Octubre 26: Curso de Backend con Node",
   "main": "index.js",
   "dependencies": {
+    "@hapi/boom": "^8.0.1",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongodb": "^3.3.3"
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.3.3",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
+    "chalk": "^3.0.0",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
     "proxyquire": "^2.1.3",
@@ -17,7 +24,9 @@
   "scripts": {
     "dev": "DEBUG=app:* nodemon src/index.js",
     "start": "NODE_ENV=production node src/index.js",
-    "test": "mocha --exit"
+    "test": "mocha --exit",
+    "seed:keys": "set DEBUG=app:* && node src/utils/seeds/api-keys.js",
+    "seed:users": "set DEBUG=app:* && node src/utils/seeds/users"
   },
   "repository": {
     "type": "git",
